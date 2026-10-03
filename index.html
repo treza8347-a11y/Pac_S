@@ -1,1 +1,223 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estimez vos aides à la rénovation énergétique — Gratuit</title>
+  <meta name="description" content="Découvrez en 1 minute le montant de vos aides pour la rénovation énergétique. Simulation gratuite et sans engagement." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- reCAPTCHA v3 -->
+  <script src="https://www.google.com/recaptcha/api.js?render=VOTRE_SITE_KEY_RECAPTCHA"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">Éco<span>Rénov</span></a>
+      <a href="#formulaire" class="btn btn--small btn--primary">Simuler mes aides</a>
+    </div>
+  </header>
+
+  <!-- ===== HERO + FORMULAIRE ===== -->
+  <section class="hero">
+    <div class="container hero__inner">
+
+      <!-- Bloc gauche : argumentaire -->
+      <div class="hero__content">
+        <span class="badge">⚡ Jusqu'à 90% de vos travaux financés</span>
+        <h1 class="hero__title">
+          Estimez vos <span class="gradient">aides à la rénovation</span> en 1 minute
+        </h1>
+        <p class="hero__subtitle">
+          MaPrimeRénov', CEE, TVA réduite… Découvrez le montant exact auquel vous avez droit.
+          Simulation 100% gratuite, sans engagement.
+        </p>
+        <ul class="hero__list">
+          <li>✅ Résultat personnalisé selon votre logement</li>
+          <li>✅ Accompagnement par un conseiller expert</li>
+          <li>✅ Réponse sous 24h ouvrées</li>
+        </ul>
+        <p class="hero__trust">🔒 Vos données sont sécurisées et ne sont jamais revendues</p>
+      </div>
+
+      <!-- Bloc droit : formulaire -->
+      <div class="hero__form" id="formulaire">
+        <div class="card">
+          <h2 class="card__title">Ma simulation gratuite</h2>
+          <p class="card__subtitle">Tous les champs sont obligatoires</p>
+
+          <form id="leadForm" novalidate>
+
+            <!-- Honeypot (invisible pour humains) -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="website">Ne pas remplir ce champ</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <!-- Champs cachés -->
+            <input type="hidden" id="formStartTime" name="formStartTime" />
+            <input type="hidden" id="recaptchaToken" name="recaptchaToken" />
+            <input type="hidden" id="ipAddress" name="ipAddress" />
+
+            <!-- Identité -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">Prénom *</label>
+                <input type="text" id="firstName" name="firstName" required minlength="2" placeholder="Ex : Marie" />
+                <span class="error-msg" data-error="firstName"></span>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Nom *</label>
+                <input type="text" id="lastName" name="lastName" required minlength="2" placeholder="Ex : Dupont" />
+                <span class="error-msg" data-error="lastName"></span>
+              </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Téléphone *</label>
+                <input type="tel" id="phone" name="phone" required placeholder="06 12 34 56 78" />
+                <span class="error-msg" data-error="phone"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required placeholder="vous@exemple.com" />
+                <span class="error-msg" data-error="email"></span>
+              </div>
+            </div>
+
+            <!-- Adresse -->
+            <div class="form-group">
+              <label for="address">Adresse *</label>
+              <input type="text" id="address" name="address" required minlength="5" placeholder="12 rue de la Paix" />
+              <span class="error-msg" data-error="address"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="postalCode">Code Postal *</label>
+                <input type="text" id="postalCode" name="postalCode" required pattern="[0-9]{5}" maxlength="5" placeholder="75001" />
+                <span class="error-msg" data-error="postalCode"></span>
+              </div>
+              <div class="form-group">
+                <label for="city">Ville *</label>
+                <input type="text" id="city" name="city" required minlength="2" placeholder="Paris" />
+                <span class="error-msg" data-error="city"></span>
+              </div>
+            </div>
+
+            <!-- Logement -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="housingType">Type de logement *</label>
+                <select id="housingType" name="housingType" required>
+                  <option value="">— Choisissez —</option>
+                  <option value="Maison">Maison</option>
+                  <option value="Appartement">Appartement</option>
+                  <option value="Immeuble">Immeuble</option>
+                  <option value="Autre">Autre</option>
+                </select>
+                <span class="error-msg" data-error="housingType"></span>
+              </div>
+              <div class="form-group">
+                <label for="status">Statut *</label>
+                <select id="status" name="status" required>
+                  <option value="">— Choisissez —</option>
+                  <option value="Propriétaire occupant">Propriétaire occupant</option>
+                  <option value="Propriétaire bailleur">Propriétaire bailleur</option>
+                  <option value="Locataire">Locataire</option>
+                  <option value="SCI">SCI</option>
+                </select>
+                <span class="error-msg" data-error="status"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="surface">Surface (m²) *</label>
+                <input type="number" id="surface" name="surface" required min="5" max="1000" placeholder="Ex : 85" />
+                <span class="error-msg" data-error="surface"></span>
+              </div>
+              <div class="form-group">
+                <label for="heating">Chauffage actuel *</label>
+                <select id="heating" name="heating" required>
+                  <option value="">— Choisissez —</option>
+                  <option value="Fioul">Fioul</option>
+                  <option value="Gaz">Gaz</option>
+                  <option value="Électrique">Électrique</option>
+                  <option value="Bois">Bois / Pellets</option>
+                  <option value="Pompe à chaleur">Pompe à chaleur</option>
+                  <option value="Autre">Autre</option>
+                </select>
+                <span class="error-msg" data-error="heating"></span>
+              </div>
+            </div>
+
+            <!-- Foyer -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="income">Revenu Fiscal (€) *</label>
+                <input type="number" id="income" name="income" required min="0" placeholder="Ex : 25000" />
+                <span class="error-msg" data-error="income"></span>
+              </div>
+              <div class="form-group">
+                <label for="household">Nombre de personnes *</label>
+                <input type="number" id="household" name="household" required min="1" max="20" placeholder="Ex : 3" />
+                <span class="error-msg" data-error="household"></span>
+              </div>
+            </div>
+
+            <!-- Consentement -->
+            <div class="form-group form-group--checkbox">
+              <input type="checkbox" id="consent" name="consent" required />
+              <label for="consent">
+                J'accepte d'être recontacté(e) par téléphone ou email concernant ma simulation. *
+              </label>
+              <span class="error-msg" data-error="consent"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+              <span class="btn__text">Recevoir mon estimation gratuite</span>
+              <span class="btn__loader" hidden></span>
+            </button>
+
+            <p class="form-footer">🔒 Données protégées par reCAPTCHA v3</p>
+
+            <div class="success-msg" id="successMsg" hidden>
+              ✅ Merci ! Votre demande a bien été reçue. Un conseiller vous contacte sous 24h.
+            </div>
+            <div class="global-error" id="globalError" hidden></div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PREUVES SOCIALES ===== -->
+  <section class="social-proof">
+    <div class="container">
+      <div class="stats">
+        <div class="stat"><strong>+2 500</strong><span>Simulations réalisées</span></div>
+        <div class="stat"><strong>12 400 €</strong><span>Aide moyenne obtenue</span></div>
+        <div class="stat"><strong>24h</strong><span>Délai de rappel</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 ÉcoRénov. Tous droits réservés. — <a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
