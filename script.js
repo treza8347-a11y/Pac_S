@@ -1,6 +1,6 @@
 
 // ===== CONFIGURATION =====
-const RECAPTCHA_SITE_KEY = 'VOTRE_SITE_KEY_RECAPTCHA';
+const RECAPTCHA_SITE_KEY = '6LdmQd0tAAAAAK5m1Y45Gxa_VdG2_DdJZWt7nw0K';
 const API_ENDPOINT = '/api/submit';
 const MIN_FORM_TIME = 5000;        // 5s minimum (formulaire plus long ici)
 const RECAPTCHA_MIN_SCORE = 0.5;
