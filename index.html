@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,6 +18,12 @@
   <header class="header">
     <div class="container header__inner">
       <a href="#" class="logo">Éco<span>Rénov</span></a>
+      <nav class="nav">
+        <a href="#comment">Comment ça marche</a>
+        <a href="#avantages">Avantages</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#faq">FAQ</a>
+      </nav>
       <a href="#formulaire" class="btn btn--small btn--primary">Simuler mes aides</a>
     </div>
   </header>
@@ -27,7 +32,6 @@
   <section class="hero">
     <div class="container hero__inner">
 
-      <!-- Bloc gauche : argumentaire -->
       <div class="hero__content">
         <span class="badge">⚡ Jusqu'à 90% de vos travaux financés</span>
         <h1 class="hero__title">
@@ -45,7 +49,6 @@
         <p class="hero__trust">🔒 Vos données sont sécurisées et ne sont jamais revendues</p>
       </div>
 
-      <!-- Bloc droit : formulaire -->
       <div class="hero__form" id="formulaire">
         <div class="card">
           <h2 class="card__title">Ma simulation gratuite</h2>
@@ -53,18 +56,15 @@
 
           <form id="leadForm" novalidate>
 
-            <!-- Honeypot (invisible pour humains) -->
             <div class="hp-field" aria-hidden="true">
               <label for="website">Ne pas remplir ce champ</label>
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
             </div>
 
-            <!-- Champs cachés -->
             <input type="hidden" id="formStartTime" name="formStartTime" />
             <input type="hidden" id="recaptchaToken" name="recaptchaToken" />
             <input type="hidden" id="ipAddress" name="ipAddress" />
 
-            <!-- Identité -->
             <div class="form-row">
               <div class="form-group">
                 <label for="firstName">Prénom *</label>
@@ -78,7 +78,6 @@
               </div>
             </div>
 
-            <!-- Contact -->
             <div class="form-row">
               <div class="form-group">
                 <label for="phone">Téléphone *</label>
@@ -92,7 +91,6 @@
               </div>
             </div>
 
-            <!-- Adresse -->
             <div class="form-group">
               <label for="address">Adresse *</label>
               <input type="text" id="address" name="address" required minlength="5" placeholder="12 rue de la Paix" />
@@ -112,7 +110,6 @@
               </div>
             </div>
 
-            <!-- Logement -->
             <div class="form-row">
               <div class="form-group">
                 <label for="housingType">Type de logement *</label>
@@ -159,7 +156,6 @@
               </div>
             </div>
 
-            <!-- Foyer -->
             <div class="form-row">
               <div class="form-group">
                 <label for="income">Revenu Fiscal (€) *</label>
@@ -173,7 +169,6 @@
               </div>
             </div>
 
-            <!-- Consentement -->
             <div class="form-group form-group--checkbox">
               <input type="checkbox" id="consent" name="consent" required />
               <label for="consent">
@@ -200,21 +195,248 @@
     </div>
   </section>
 
-  <!-- ===== PREUVES SOCIALES ===== -->
-  <section class="social-proof">
+  <!-- ===== LOGOS DE CONFIANCE ===== -->
+  <section class="trust-logos">
     <div class="container">
-      <div class="stats">
-        <div class="stat"><strong>+2 500</strong><span>Simulations réalisées</span></div>
-        <div class="stat"><strong>12 400 €</strong><span>Aide moyenne obtenue</span></div>
-        <div class="stat"><strong>24h</strong><span>Délai de rappel</span></div>
+      <p class="trust-logos__label">Nos partenaires et certifications</p>
+      <div class="trust-logos__grid">
+        <div class="trust-logo">🇫🇷 MaPrimeRénov'</div>
+        <div class="trust-logo">🏆 RGE Qualibat</div>
+        <div class="trust-logo">⚡ CEE</div>
+        <div class="trust-logo">🌱 ADEME</div>
+        <div class="trust-logo">🔒 France Rénov'</div>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMENT ÇA MARCHE ===== -->
+  <section class="section" id="comment">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Simple et rapide</span>
+        <h2 class="section__title">Comment ça marche ?</h2>
+        <p class="section__subtitle">
+          En 3 étapes seulement, découvrez le montant exact de vos aides et lancez vos travaux.
+        </p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__number">1</div>
+          <h3 class="step__title">Remplissez le formulaire</h3>
+          <p class="step__desc">
+            Quelques informations sur votre logement et votre foyer. Ça prend moins d'une minute.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step__number">2</div>
+          <h3 class="step__title">Recevez votre estimation</h3>
+          <p class="step__desc">
+            Un conseiller expert analyse votre situation et vous calcule le montant exact de vos aides.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step__number">3</div>
+          <h3 class="step__title">Lancez vos travaux</h3>
+          <p class="step__desc">
+            Nous vous mettons en relation avec des artisans RGE qualifiés près de chez vous.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AVANTAGES ===== -->
+  <section class="section section--gray" id="avantages">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Pourquoi nous choisir</span>
+        <h2 class="section__title">Vos avantages avec ÉcoRénov</h2>
+        <p class="section__subtitle">
+          Un accompagnement complet, transparent et gratuit pour tous vos projets de rénovation.
+        </p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <div class="feature__icon">💰</div>
+          <h3 class="feature__title">Jusqu'à 90% financés</h3>
+          <p class="feature__desc">Cumulez MaPrimeRénov', CEE et TVA réduite pour réduire drastiquement votre reste à charge.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">⚡</div>
+          <h3 class="feature__title">Réponse en 24h</h3>
+          <p class="feature__desc">Nos conseillers vous rappellent rapidement avec une estimation personnalisée et détaillée.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🛡️</div>
+          <h3 class="feature__title">Artisans RGE certifiés</h3>
+          <p class="feature__desc">Un réseau national d'artisans vérifiés, assurés et qualifiés pour tous types de travaux.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">📄</div>
+          <h3 class="feature__title">Zéro paperasse</h3>
+          <p class="feature__desc">Nous gérons toutes les démarches administratives à votre place, de A à Z.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🎯</div>
+          <h3 class="feature__title">100% gratuit</h3>
+          <p class="feature__desc">Notre service est totalement gratuit. Aucun frais caché, aucun engagement.</p>
+        </div>
+        <div class="feature">
+          <div class="feature__icon">🔒</div>
+          <h3 class="feature__title">Données protégées</h3>
+          <p class="feature__desc">Vos informations sont chiffrées et ne sont jamais revendues à des tiers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TÉMOIGNAGES ===== -->
+  <section class="section" id="avis">
+    <div class="container">
+      <div class="section__header">
+        <span class="section__badge">Ils nous font confiance</span>
+        <h2 class="section__title">Ce que disent nos clients</h2>
+        <p class="section__subtitle">
+          Plus de 2 500 propriétaires ont déjà réalisé leurs travaux avec ÉcoRénov.
+        </p>
+      </div>
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">
+            "J'ai reçu 14 200 € d'aides pour changer ma chaudière au fioul. Le conseiller a tout géré, je n'ai eu aucune démarche à faire. Je recommande à 100% !"
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">SM</div>
+            <div>
+              <div class="testimonial__name">Sophie M.</div>
+              <div class="testimonial__city">Lyon (69)</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">
+            "Très professionnel. J'ai été rappelé en moins de 2h et j'ai pu lancer mes travaux d'isolation en 3 semaines. Économies d'énergie immédiates !"
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">TL</div>
+            <div>
+              <div class="testimonial__name">Thomas L.</div>
+              <div class="testimonial__city">Bordeaux (33)</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__text">
+            "Je pensais que c'était trop compliqué. Finalement, en 5 minutes j'avais mon estimation et 2 mois plus tard mes panneaux solaires étaient installés."
+          </p>
+          <div class="testimonial__author">
+            <div class="testimonial__avatar">AK</div>
+            <div>
+              <div class="testimonial__name">Amina K.</div>
+              <div class="testimonial__city">Marseille (13)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section section--gray" id="faq">
+    <div class="container container--narrow">
+      <div class="section__header">
+        <span class="section__badge">Questions fréquentes</span>
+        <h2 class="section__title">Vous avez des questions ?</h2>
+        <p class="section__subtitle">
+          Retrouvez les réponses aux questions les plus posées par nos clients.
+        </p>
+      </div>
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Le service est-il vraiment gratuit ?</summary>
+          <p class="faq__answer">
+            Oui, totalement gratuit. Nous sommes rémunérés par nos partenaires artisans uniquement si vous décidez de lancer vos travaux. Aucun frais ne vous sera jamais demandé.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Qui peut bénéficier des aides à la rénovation ?</summary>
+          <p class="faq__answer">
+            Tous les propriétaires (occupants ou bailleurs), les SCI et sous conditions les locataires. Les aides varient selon vos revenus, la composition de votre foyer et la nature des travaux.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Combien de temps prend la simulation ?</summary>
+          <p class="faq__answer">
+            Moins d'une minute. Vous remplissez le formulaire en ligne, puis un conseiller vous rappelle sous 24h ouvrées avec une estimation personnalisée.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Quels types de travaux sont éligibles ?</summary>
+          <p class="faq__answer">
+            Isolation (combles, murs, fenêtres), chauffage (pompe à chaleur, chaudière biomasse), ventilation, panneaux solaires… La plupart des travaux de rénovation énergétique sont éligibles.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Puis-je cumuler plusieurs aides ?</summary>
+          <p class="faq__answer">
+            Oui ! MaPrimeRénov', CEE, TVA réduite à 5,5%, aides locales… La plupart des dispositifs sont cumulables. Notre conseiller vous indiquera le montant exact.
+          </p>
+        </details>
+        <details class="faq__item">
+          <summary class="faq__question">Mes données sont-elles protégées ?</summary>
+          <p class="faq__answer">
+            Absolument. Vos informations sont chiffrées et ne sont transmises qu'à nos conseillers et aux artisans sélectionnés pour votre projet. Elles ne sont jamais revendues.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="cta-final__title">Prêt à découvrir combien vous pouvez économiser ?</h2>
+      <p class="cta-final__subtitle">
+        Simulation gratuite en moins d'une minute. Sans engagement.
+      </p>
+      <a href="#formulaire" class="btn btn--primary btn--large">
+        Je démarre ma simulation gratuite →
+      </a>
+      <p class="cta-final__trust">🔒 Plus de 2 500 propriétaires nous ont déjà fait confiance</p>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="container">
-      <p>© 2026 ÉcoRénov. Tous droits réservés. — <a href="#">Mentions légales</a> · <a href="#">Confidentialité</a></p>
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <div class="logo">Éco<span>Rénov</span></div>
+        <p class="footer__desc">
+          Votre partenaire de confiance pour la rénovation énergétique en France.
+        </p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <a href="#comment">Comment ça marche</a>
+        <a href="#avantages">Avantages</a>
+        <a href="#avis">Avis clients</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer__col">
+        <h4>Légal</h4>
+        <a href="#">Mentions légales</a>
+        <a href="#">Politique de confidentialité</a>
+        <a href="#">Cookies</a>
+        <a href="#">CGU</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 ÉcoRénov. Tous droits réservés.</p>
+      </div>
     </div>
   </footer>
 
