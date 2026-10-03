@@ -1,4 +1,3 @@
-
 // api/submit.js
 const RECAPTCHA_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 const MIN_SCORE = 0.5;
@@ -103,4 +102,26 @@ export default async function handler(req, res) {
     const payload = {
       secret: process.env.APPS_SCRIPT_SECRET,
       firstName, lastName, phone, email, address, postalCode, city,
-      housingType, status, surface, heating,
+      housingType, status, surface, heating, income, household,
+      consent: true,
+      ip: finalIp,
+      userAgent,
+      submittedAt: submittedAt || new Date().toISOString(),
+      score: verifyData.score,
+      action: verifyData.action,
+    };
+
+    const appsRes = await fetch(process.env.APPS_SCRIPT_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    });
+
+    if (!appsRes.ok) throw new Error('Erreur Apps Script : ' + appsRes.status);
+
+    return res.status(200).json({ success: true, score: verifyData.score });
+  } catch (err) {
+    console.error('Erreur serveur :', err);
+    return res.status(500).json({ success: false, error: 'Erreur interne.' });
+  }
+}
