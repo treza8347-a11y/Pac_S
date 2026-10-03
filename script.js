@@ -175,6 +175,12 @@ function realSuccess() {
   form.reset();
   $('#formStartTime').value = Date.now();
   successMsg.hidden = false;
+  
+  // 🎯 Déclenche l'événement Lead pour Meta Pixel
+  if (typeof fbq === 'function') {
+    fbq('track', 'Lead');
+    console.log('✅ Événement Lead envoyé à Meta Pixel');
+  }
   setTimeout(() => { successMsg.hidden = true; }, 10000);
 }
 function fakeSuccess() {
